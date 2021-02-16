@@ -1,0 +1,541 @@
+.wrapper {
+  max-width: 100vw;
+  --color-primary: #fc0341;
+  --color-secondary: #1a597e;
+}
+
+section,
+header,
+footer {
+  background: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 4rem;
+}
+
+h1 {
+  text-transform: uppercase;
+  font-size: 2rem;
+  font-family: 'Goldman', cursive;
+  letter-spacing: 2px;
+}
+
+/* HEADER */
+.header {
+  justify-content: space-between;
+  position: fixed;
+  z-index: 100;
+
+  width: 100%;
+  height: 60px;
+
+  border-bottom: 2px solid var(--color-primary);
+
+  background-color: rgba(0, 0, 0, 0.95);
+}
+.header .logo {
+  width: 220px;
+  height: 220px;
+  background: url('../Assets/logo.png') no-repeat center center / contain;
+}
+
+.header .nav {
+  height: 100%;
+  width: 50%;
+  min-width: 40%;
+  max-width: 600px;
+  background: transparent;
+
+  display: flex;
+}
+.header .nav ul {
+  height: inherit;
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.header .nav ul .menuItem {
+  height: 100%;
+  width: 100%;
+  min-width: 100px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header .nav ul .menuItem:hover::after {
+  content: '';
+  display: inline-block;
+  width: 100%;
+  height: 3px;
+  background: var(--color-primary);
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  animation: nav-selection 0.1s ease-in-out forwards;
+}
+.header .nav .menuItem a {
+  color: #fff;
+  font-weight: bold;
+
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+/* HOME */
+.home {
+  height: calc(100vh + 50px);
+  background: url('../Assets/bg.jpg') no-repeat center 5px / cover;
+  background-position: fixed;
+  padding: 5rem 0;
+}
+.home .title {
+  text-align: center;
+  padding: 5rem 0;
+  position: relative;
+  align-self: flex-start;
+}
+.home .title h1 {
+  font-family: 'Goldman', cursive;
+  font-size: 5rem;
+  color: var(--color-primary);
+  font-weight: 900;
+  opacity: 0;
+}
+.home .title h3 {
+  font-size: 2rem;
+  line-height: 2rem;
+  font-weight: 300;
+  opacity: 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 60px;
+}
+.home .title h3::after {
+  content: '';
+  display: inline-block;
+  background: white;
+  height: 2px;
+  width: 0;
+  position: absolute;
+  bottom: 15px;
+  align-self: center;
+  animation: slide 0.5s 2s ease-in-out forwards;
+}
+
+.home .socialMedia {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  width: 100%;
+  margin-top: 5px;
+}
+.home .socialMedia a:nth-child(1) {
+  opacity: 0;
+  animation: media1 0.3s 1.2s forwards ease-in-out;
+}
+.home .socialMedia a:nth-child(2) {
+  opacity: 0;
+  animation: media2 0.3s 1.4s forwards ease-in-out;
+}
+.home .socialMedia a:nth-child(3) {
+  opacity: 0;
+  animation: media3 0.3s 1.6s forwards ease-in-out;
+}
+.home .socialMedia img {
+  width: 50px;
+  cursor: pointer;
+}
+.home .socialMedia img:hover {
+  transform: translateY(-5px);
+  transition: 0.1s linear;
+}
+
+/* SERVICES */
+.services {
+  height: calc(50vh + 50px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.services h1::after {
+  content: '';
+  display: inline-block;
+  background: var(--color-primary);
+  height: 5px;
+  width: 5px;
+  border-radius: 50%;
+  margin-left: 2px;
+}
+
+.services .serviceList {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0 0.7rem;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4rem;
+}
+.services .serviceList .service {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+}
+.services .serviceList .service .serviceIcon {
+  margin-right: 18px;
+  align-self: start;
+}
+.services .serviceList .service .serviceIcon span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+.services .serviceList .service .serviceIcon span svg {
+  font-size: 2rem;
+  color: var(--color-primary);
+}
+.services .serviceList .service article {
+  padding: 0 20px 0 0;
+  max-width: 280px;
+}
+.services .serviceList .service article h3 {
+  font-size: 1.4rem;
+}
+.services .serviceList .service article p {
+  font-weight: 400;
+  margin-top: 12px;
+  font-weight: 200;
+}
+
+/* ABOUT */
+.about {
+  height: calc(60vh + 50px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: black;
+}
+.about h1 {
+  align-self: start;
+}
+
+.about .content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 36px;
+}
+.about .content .description {
+  width: 48%;
+}
+.about .content .description article h2 {
+  text-transform: uppercase;
+  color: var(--color-primary);
+  font-size: 1.5rem;
+  margin-bottom: 24px;
+}
+.about .content .description article p {
+  font-weight: 200;
+
+  font-weight: 400;
+  letter-spacing: 1px;
+  line-height: 26px;
+}
+
+.about .content .graphic {
+  width: 48%;
+}
+.about .content .graphic .stats {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24px;
+}
+.about .content .graphic .stats .stateHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.about .content .graphic .stats span {
+  width: 100%;
+  height: 5px;
+  background: white;
+  border-radius: 10px;
+  margin-top: 10px;
+  position: relative;
+}
+.about .content .graphic .stats1 span::after {
+  content: '';
+  display: inline-block;
+  width: 96%;
+  height: 5px;
+  background: var(--color-primary);
+  position: absolute;
+  left: 0;
+  border-radius: 10px 0 0 10px;
+}
+.about .content .graphic .stats2 span::after {
+  content: '';
+  display: inline-block;
+  width: 90%;
+  height: 5px;
+  background: var(--color-primary);
+  position: absolute;
+  left: 0;
+  border-radius: 10px 0 0 10px;
+}
+.about .content .graphic .stats3 span::after {
+  content: '';
+  display: inline-block;
+  width: 84%;
+  height: 5px;
+  background: var(--color-primary);
+  position: absolute;
+  left: 0;
+  border-radius: 10px 0 0 10px;
+}
+.about .content .graphic .stats4 span::after {
+  content: '';
+  display: inline-block;
+  width: 78%;
+  height: 5px;
+  background: var(--color-primary);
+  position: absolute;
+  left: 0;
+  border-radius: 10px 0 0 10px;
+}
+
+/* PROJECTS */
+.projects {
+  height: calc(100vh + 50px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.projects h1 {
+  position: relative;
+}
+.projects h1::after {
+  content: '';
+  display: inline-block;
+  width: 40%;
+  height: 2px;
+  background: var(--color-primary);
+  position: absolute;
+  bottom: -2px;
+  left: 30%;
+}
+
+.projects .portfolio {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0;
+  height: 85%;
+  width: 100%;
+}
+.projects .portfolio .project {
+  background: black;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+.projects .portfolio .project .projectText {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: black;
+  height: 15%;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.projects .portfolio .project .projectText svg {
+  font-size: 1.5rem;
+  color: var(--color-primary);
+  margin-left: 1rem;
+}
+
+.projects .portfolio .project:hover .modal {
+  display: flex;
+}
+
+.projects .portfolio .project .modal {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  height: 77%;
+  width: 94%;
+  background: rgba(22, 22, 22, 0.95);
+  position: absolute;
+  top: 5%;
+  left: 3%;
+  right: 3%;
+  bottom: 15%;
+  z-index: 1;
+}
+.projects .portfolio .project .modal h5 {
+  font-size: 0.5rem;
+  font-weight: 900;
+  color: var(--color-primary);
+  align-self: flex-start;
+  text-transform: uppercase;
+}
+.projects .portfolio .project .modal h3 {
+  font-size: 1.2rem;
+  align-self: flex-start;
+  margin-left: 0.5rem;
+  margin-bottom: 1rem;
+  text-transform: capitalize;
+}
+.projects .portfolio .project .modal p {
+  font-size: 0.8rem;
+  margin-left: 0.5rem;
+  line-height: 1.3rem;
+}
+
+/* CONTACT */
+.contacts {
+  height: 35vh;
+  background: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.contacts .list {
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 0;
+}
+.contacts .list .contact {
+  display: flex;
+  align-items: center;
+  gap: 0 1rem;
+}
+.contacts .list .contact svg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3.2rem;
+  border: 2px solid white;
+  border-radius: 50%;
+  color: var(--color-primary);
+  padding: 0.7rem;
+}
+
+/* FOOTER */
+.footer {
+  height: 10vh;
+  background: black;
+  border-top: 0.01rem solid darkgrey;
+  display: flex;
+  gap: 0.5rem;
+  color: grey;
+}
+.footer p {
+  text-transform: capitalize;
+}
+.footer svg {
+  color: var(--color-primary);
+  font-size: 1.5rem;
+}
+
+/* ANIMAÇÕES */
+
+/* NAV-SLIDE */
+@keyframes nav-selection {
+  0% {
+    height: 0px;
+  }
+  100% {
+    height: 3.5px;
+  }
+}
+
+/* SURGE ANIMATION */
+.animationSurge1 {
+  animation: surge_1 0.6s 0.6s forwards ease-in-out;
+}
+@keyframes surge_1 {
+  0% {
+    transform: translateY(30px);
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+.animationSurge2 {
+  animation: surge_2 0.6s 0.75s forwards ease-in-out;
+}
+@keyframes surge_2 {
+  0% {
+    transform: translateY(30px);
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+/* BAR ANIMATION */
+@keyframes slide {
+  to {
+    width: 40%;
+  }
+}
+
+/* SOCIAL MEDIA ANIMATION */
+@keyframes media1 {
+  0% {
+    transform: translateY(30px);
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+@keyframes media2 {
+  0% {
+    transform: translateY(30px);
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+@keyframes media3 {
+  0% {
+    transform: translateY(30px);
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
