@@ -8,7 +8,7 @@ const Services = [
   {
     id: 1,
     icon: <IoPhonePortraitOutline />,
-    title: 'Design Responsivo',
+    title: 'Responsive Design',
     description:
       'Seu site elegante e único, compativel com qualquer dispositivo.',
   },
@@ -22,7 +22,7 @@ const Services = [
   {
     id: 3,
     icon: <IoCreateOutline />,
-    title: 'Website Rewriting',
+    title: 'Updating Website',
     description: 'Seu site atual melhorado e atualizado com novas tecnologias.',
   },
 ];

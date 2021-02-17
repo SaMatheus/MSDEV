@@ -4,18 +4,46 @@ import styles from './Home.module.css';
 
 // DATA
 import HeaderMenu from '../Data/Header-menu';
-import SocialMedia from '../Data/Social-media';
+import StackList from '../Data/Stacks';
 import Services from '../Data/Services.js';
 import ProjectsList from '../Data/Projects.js';
 import ContactList from '../Data/Contacts.js';
 
 // ICONS
 import { BiCopyright } from 'react-icons/bi';
+import { FiMenu } from 'react-icons/fi';
+import { IoClose } from 'react-icons/io5';
 
 const Home = () => {
   return (
     <div className={styles.wrapper}>
-      <header className={styles.header}>
+      <div
+        id="openButton"
+        className={`${styles.openButton}`}
+        onClick={() => {
+          const openButton = document.getElementById('openButton');
+          openButton.classList.add(`${styles.openButtonHidden}`);
+
+          const header = document.getElementById('header');
+          header.classList.add(`${styles.openButtonActive}`);
+        }}
+      >
+        <FiMenu />
+      </div>
+      <header id="header" className={`${styles.header}`}>
+        <div
+          className={`${styles.closeButton}`}
+          onClick={() => {
+            const openButton = document.getElementById('openButton');
+            openButton.classList.remove(`${styles.openButtonHidden}`);
+
+            const header = document.getElementById('header');
+            header.classList.remove(`${styles.openButtonActive}`);
+          }}
+        >
+          <IoClose />
+        </div>
+
         <title>Cabecalho</title>
         <div className={styles.logo}></div>
         <nav className={styles.nav}>
@@ -36,11 +64,17 @@ const Home = () => {
           <h1 className={styles.animationSurge1}>Matheus Sá</h1>
           <h3 className={styles.animationSurge2}>Front-end Developer</h3>
           <div className={styles.socialMedia}>
-            {SocialMedia.map((social) => {
+            {StackList.map((stack) => {
               return (
-                <a key={social.id} href={social.href} target="_blank">
-                  <img src={social.img} alt={social.title} />
-                </a>
+                <span
+                  key={stack.id}
+                  style={{
+                    opacity: `${stack.opacity}`,
+                    animation: `stack 0.3s${stack.delay} forwards ease-in-out`,
+                  }}
+                >
+                  <img src={stack.img} alt={stack.title} />
+                </span>
               );
             })}
           </div>
@@ -73,13 +107,24 @@ const Home = () => {
             <article>
               <h2>Desenvolvedor Front-end</h2>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet
-                sed dolores mollitia dicta, consequuntur incidunt, recusandae
-                explicabo sit architecto totam magnam. Amet inventore assumenda
-                quis quos, natus laboriosam excepturi necessitatibus saepe
-                dolorem, ut pariatur. Tenetur sapiente magnam adipisci aperiam.
-                Enim ea possimus vitae veritatis consequuntur perspiciatis
-                soluta earum maxime delectus!
+                Sempre acreditei na frase "trabalhe com o que você ama e você
+                nunca terá que trabalhar um dia na vida". 
+                <br />
+                Demorou uns anos, mas descobri algo que realmente{' '}
+                <strong>amo</strong> e que me traz <strong>satisfação</strong>.
+                Cada website, cada ecommerce e cada Landing Page é uma nova
+                emoção, um sentimento novo e, claro, é um grande{' '}
+                <strong>aprendizado</strong>.
+                <br />
+                Gosto muito de usar as novas tecnologias e tendências do
+                mercado. Já estudei muito, mas vou continuar fazendo diversos
+                cursos, bootcamp's e MBA's para conhecer mais cada detalhe do
+                mundo Tech e me tornar o <strong>melhor</strong> naquilo que
+                faço.
+                <br />
+                Hoje sou um Programador Frontend e vou me dedicar e me empenhar
+                a cada dia para dar o melhor para os usuários, para{' '}
+                <strong>sua empresa</strong> e para <strong>você</strong>. 
               </p>
             </article>
           </div>
@@ -151,7 +196,14 @@ const Home = () => {
           {ContactList.map((cont) => {
             return (
               <div key={cont.id} className={styles.contact}>
-                {cont.icon}
+                <a
+                  href={cont.href}
+                  style={{ zIndex: 100 }}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {cont.icon}
+                </a>
                 <p>{cont.value}</p>
               </div>
             );
