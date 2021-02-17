@@ -161,7 +161,7 @@ const Home = () => {
       <footer className={styles.footer}>
         <p>Copywright</p>
         <BiCopyright />
-        <p>2021 MSDEV</p>
+        <p>2021 MSDEV - Todos os direitos reservados</p>
       </footer>
     </div>
   );

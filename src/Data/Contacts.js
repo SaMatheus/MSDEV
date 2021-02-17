@@ -11,7 +11,7 @@ const ContactList = [
   {
     id: 2,
     icon: <AiOutlineWhatsApp />,
-    value: '(11) 9 8537-4474',
+    value: '+55 11 9 8537-4474',
   },
   {
     id: 3,
