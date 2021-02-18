@@ -912,6 +912,10 @@ h1 {
     font-size: 3.8rem;
   }
 
+  .services {
+    padding: 1rem 0;
+  }
+
   .projects .portfolio .project {
     height: 250px;
   }
