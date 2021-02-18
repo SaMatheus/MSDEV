@@ -950,6 +950,21 @@ h1 {
   }
 }
 
+@media (max-height: 1024px) and (max-width: 770px) {
+  .home {
+    height: 60vh;
+  }
+  .home .title {
+    align-self: center;
+    padding: 0;
+  }
+
+  .services {
+    height: 100%;
+    padding: 2rem 0;
+  }
+}
+
 @media (max-height: 415px) and (max-width: 740px) {
   .header .logo {
     width: 200px;
