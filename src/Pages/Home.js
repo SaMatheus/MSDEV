@@ -68,15 +68,8 @@ const Home = () => {
               return (
                 <span
                   key={stack.id}
-                  style={{
-                    opacity: `${stack.opacity}`,
-                    animationDelay: ` ${stack.delay}`,
-                    animationName: 'stackAnimation',
-                    animatioDuration: '0.3',
-                    animationTimingFunction: 'linear',
-                    animationDirection: 'forwards',
-                    transform: 'translateY(30px)',
-                  }}
+                  className={styles.stack}
+                  style={{ animationDelay: `${stack.delay}` }}
                 >
                   <img src={stack.img} alt={stack.title} />
                 </span>

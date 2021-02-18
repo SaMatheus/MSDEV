@@ -4,6 +4,7 @@ import Proffy from '../Assets/proffy.png';
 import Happy from '../Assets/happy.png';
 import NinjaSom from '../Assets/ninja_som.png';
 import Github from '../Assets/project-github_explorer.png';
+import Starbucks from '../Assets/starbucks.png';
 
 // ICONS
 import {
@@ -13,12 +14,13 @@ import {
   FaMusic,
   FaGithub,
 } from 'react-icons/fa';
+import { BiCoffeeTogo } from 'react-icons/bi';
 
 const ProjectsList = [
   {
     id: 1,
     img: Ecoleta,
-    title: 'Projeto Ecoleta',
+    title: 'Ecoleta',
     objective: 'Colaborar com a reciclagem em prol da natureza.',
     description:
       'Neste site os usuarios encontram pontos de coleta de lixos reclicaveis, como papel, plastico e pilhas eletronicas descarregadas. ',
@@ -65,6 +67,16 @@ const ProjectsList = [
       'O app permite o usuário realizar pesquisas com base no nome de usuário, as informações da pesquisa são exibidas em uma tela organizada e bonita.',
     icon: <FaGithub />,
     size: 'cover',
+  },
+  {
+    id: 6,
+    img: Starbucks,
+    title: 'Starbucks',
+    objective: 'Captar clientes com base em 3 rodutos base.',
+    description:
+      'Prévia de trabalho profissional em produção. O site permite a interação com cada shake alterando a cor principal do site.',
+    icon: <BiCoffeeTogo />,
+    size: 'contain',
   },
 ];
 
