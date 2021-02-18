@@ -912,10 +912,6 @@ h1 {
     font-size: 3.8rem;
   }
 
-  .services {
-    padding: 2rem;
-  }
-
   .projects .portfolio .project {
     height: 250px;
   }
@@ -972,7 +968,7 @@ h1 {
 
   .services {
     height: 100%;
-    padding: 2rem 0;
+    padding: 2rem;
   }
 }
 
@@ -992,7 +988,7 @@ h1 {
 
   .services {
     height: 100%;
-    padding: 2rem 0;
+    padding: 2rem;
   }
 }
 
@@ -1015,6 +1011,6 @@ h1 {
 
   .services {
     height: 100%;
-    padding: 2rem 0;
+    padding: 2rem 2rem;
   }
 }
