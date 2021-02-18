@@ -8,7 +8,8 @@ const ContactList = [
   {
     id: 1,
     icon: <BiPhoneCall />,
-    value: '(11) 9 8537-4474',
+    value: 'Telefone',
+    href: 'tel:+5511985374474',
   },
   {
     id: 2,
