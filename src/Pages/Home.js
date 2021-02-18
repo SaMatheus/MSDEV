@@ -60,7 +60,7 @@ const Home = () => {
       </header>
       <section id="home" className={styles.home}>
         <div className={styles.title}>
-          <title>Conteudo inicial de programacao</title>
+          <title>Conteudo inicial do msdev - programação front-end</title>
           <h1 className={styles.animationSurge1}>Matheus Sá</h1>
           <h3 className={styles.animationSurge2}>Front-end Developer</h3>
           <div className={styles.socialMedia}>
@@ -70,7 +70,12 @@ const Home = () => {
                   key={stack.id}
                   style={{
                     opacity: `${stack.opacity}`,
-                    animation: `stack 0.3s${stack.delay} forwards ease-in-out`,
+                    animationDelay: ` ${stack.delay}`,
+                    animationName: 'stackAnimation',
+                    animatioDuration: '0.3',
+                    animationTimingFunction: 'linear',
+                    animationDirection: 'forwards',
+                    transform: 'translateY(30px)',
                   }}
                 >
                   <img src={stack.img} alt={stack.title} />
@@ -81,7 +86,7 @@ const Home = () => {
         </div>
       </section>
       <section id="services" className={styles.services}>
-        <title>Servicos realizados pelo programador</title>
+        <title>Criação de sites e outros projetos de msdev</title>
         <h1>minhas especialidades</h1>
         <div className={styles.serviceList}>
           {Services.map((services) => {
